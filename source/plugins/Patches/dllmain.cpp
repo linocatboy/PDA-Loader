@@ -16,6 +16,7 @@
 
 #include "101.h"
 #include "130.h"
+#include "200.h"
 #include "301.h"
 #include "600.h"
 
@@ -40,6 +41,7 @@ BOOL APIENTRY DllMain(HMODULE hModule,
 		hModulePtr = &hModule;
 	    if (*(char*)0x004ed611 == (char)0x8b) game_version = 130;
 		else if (*(char*)0x007B1210 == (char)0x83) game_version = 301;
+		else if (*(char*)0x00AADAB4 == (char)0x32) game_version = 200;
 		else if (*(char*)0x004592CC == (char)0x74) game_version = 600;
 		ApplyPatches();
 	}
@@ -73,6 +75,9 @@ void ApplyPatches() {
 		break;
 	case 130:
 		patch_ptr = patches_130;
+		break;
+	case 200:
+		patch_ptr = patches_200;
 		break;
 	case 301:
 		patch_ptr = patches_301;

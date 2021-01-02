@@ -105,6 +105,7 @@
   <ItemGroup>
     <ClInclude Include="101.h" />
     <ClInclude Include="130.h" />
+    <ClInclude Include="200.h" />
     <ClInclude Include="301.h" />
     <ClInclude Include="600.h" />
     <ClInclude Include="framework.h" />

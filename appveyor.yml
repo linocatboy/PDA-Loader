@@ -13,6 +13,7 @@ after_build:
     - cd source\plugins\MLAC
     - msbuild -p:Configuration=101
     - msbuild -p:Configuration=130
+    - msbuild -p:Configuration=200
     - msbuild -p:Configuration=301
     - cd ..\..\..
     - cmd: publish
@@ -22,6 +23,8 @@ artifacts:
       name: 1.01
     - path: 1.30.7z
       name: 1.30
+    - path: 2.00.7z
+      name: 2.00
     - path: 3.01.7z
       name: 3.01
     - path: 6.00.7z
