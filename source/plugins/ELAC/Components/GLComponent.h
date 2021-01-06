@@ -1,3 +1,4 @@
+#ifdef _600
 #pragma once
 #include "EmulatorComponent.h"
 #include <string>
@@ -21,4 +22,4 @@ namespace ELAC::Components
 		std::string inputString;
 	};
 }
-
+#endif

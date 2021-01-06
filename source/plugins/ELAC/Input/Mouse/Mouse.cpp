@@ -90,10 +90,12 @@ namespace ELAC::Input
 		RECT hWindow;
 		GetClientRect(ELAC::MainModule::DivaWindowHandle, &hWindow);
 
+#ifdef _600
 		gameHeight = (int*)RESOLUTION_HEIGHT_ADDRESS;
 		gameWidth = (int*)RESOLUTION_WIDTH_ADDRESS;
 		fbWidth = (int*)FB1_WIDTH_ADDRESS;
 		fbHeight = (int*)FB1_HEIGHT_ADDRESS;
+#endif
 		
 		if (directInputMouse != nullptr)
 		{
@@ -101,6 +103,7 @@ namespace ELAC::Input
 				currentState.MouseWheel += directInputMouse->GetMouseWheel();
 		}
 
+#ifdef _600
 		if ((fbWidth != gameWidth) && (fbHeight != gameHeight)) {
 			xoffset = ((float)16 / (float)9) * (hWindow.bottom - hWindow.top);
 			if (xoffset != (hWindow.right - hWindow.left))
@@ -115,6 +118,7 @@ namespace ELAC::Input
 			currentState.RelativePosition.x = ((currentState.RelativePosition.x - round(xoffset)) * *gameWidth / (hWindow.right - hWindow.left)) / scale;
 			currentState.RelativePosition.y = currentState.RelativePosition.y * *gameHeight / (hWindow.bottom - hWindow.top);
 		}
+#endif
 		return true;
 	}
 }

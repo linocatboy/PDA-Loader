@@ -18,9 +18,10 @@
 #include "130.h"
 #include "200.h"
 #include "301.h"
+#include "410.h"
 #include "600.h"
 
-unsigned short game_version = 101;
+unsigned short game_version = 410;
 
 void InjectCode(void* address, const std::vector<uint8_t> data);
 void ApplyCustomPatches(std::wstring CPATCH_FILE_STRING);
@@ -78,6 +79,9 @@ void ApplyPatches() {
 		break;
 	case 200:
 		patch_ptr = patches_200;
+		break;
+	case 410:
+		patch_ptr = patches_410;
 		break;
 	case 301:
 		patch_ptr = patches_301;

@@ -1,4 +1,4 @@
-#include "GLComponent.h"
+/*#include "GLComponent.h"
 #include "GLMemory.h"
 #include <iostream>
 #include <Windows.h>
@@ -664,5 +664,5 @@ namespace ELAC::Components
 				}
 			}
 		}
-	}
+	}*/
 
